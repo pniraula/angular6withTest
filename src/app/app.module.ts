@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpModule, Http } from '@angular/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AlertsModule } from './components/alerts/alerts.module';
@@ -12,7 +12,8 @@ import { AlertsModule } from './components/alerts/alerts.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AlertsModule
+    AlertsModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

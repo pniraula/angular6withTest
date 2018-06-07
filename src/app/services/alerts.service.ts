@@ -10,6 +10,6 @@ export class AlertsService{
     }
     
     public getAlerts(){
-        return this.http.get('../data/alert.json');
+        return this.http.get('../../assets/data/alerts.json');
     }
 }
