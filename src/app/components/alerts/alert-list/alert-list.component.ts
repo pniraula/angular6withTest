@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-
-import { AlertsService } from '../../../services/alerts.service';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { Alert } from '../../../models/alert';
 
@@ -10,17 +8,12 @@ import { Alert } from '../../../models/alert';
   styleUrls: ['./alert-list.component.scss']
 })
 export class AlertListComponent implements OnInit {
-  public alerts:Alert[];
-  constructor(private alertsService:AlertsService) { 
+  @Input() alerts:Alert[];
+  constructor() { 
 
   }
 
   ngOnInit() {
-    this.alertsService.getAlerts().toPromise().then((resp)=>{
-      this.alerts = resp.json();
-    }, err=>{
-      console.log(err); //error handling
-    })
   }
 
 }
