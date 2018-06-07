@@ -7,7 +7,7 @@ import { Alert } from '../../../models/alert';
 @Component({
   selector: 'alert-list',
   templateUrl: './alert-list.component.html',
-  styleUrls: ['./alert-list.component.css']
+  styleUrls: ['./alert-list.component.scss']
 })
 export class AlertListComponent implements OnInit {
   public alerts:Alert[];

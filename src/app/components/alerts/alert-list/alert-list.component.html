@@ -1,5 +1,35 @@
 <div class="alerts-wrapper">
-  <div class="alert" *ngFor="let alert of alerts">
-    {{alert.AlertId}}
+  <div class="alerts-header">
+    <div class="alerts-title">
+      Alerts({{alerts?.length}})
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="search">
+    </div>
+  </div>
+  <div class="alerts-content">
+    <table class="table">
+      <thead>
+        <th scope="col">AlertId</th>
+        <th scope="col">AlertTime</th>
+        <th scope="col">Severity</th>
+        <th scope="col">ClientIP</th>
+        <th scope="col">ServerIP</th>
+        <th scope="col">Protocol</th>
+        <th scope="col">ClientCountry</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let alert of alerts">
+          <td>{{alert.AlertId}}</td>
+          <td>{{alert.AlertTime}}</td>
+          <td>{{alert.Severity}}</td>
+          <td>{{alert.ClientIP}}</td>
+          <td>{{alert.ServerIP}}</td>
+          <td>{{alert.Protocol}}</td>
+          <td>{{alert.ClientCountry}}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
+
