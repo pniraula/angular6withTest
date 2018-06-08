@@ -9,7 +9,7 @@ import { Filter } from '../../../../models/filter';
 export class FilterGroupComponent implements OnInit {
   @Input() title:string;
   @Input() filters:Filter[]; 
-  @Output() onAlertSelected:EventEmitter<Filter> = new EventEmitter<Filter>();
+  @Output() onFileterSelected:EventEmitter<Filter> = new EventEmitter<Filter>();
   public selected:Filter;
   constructor() { }
 
@@ -18,6 +18,6 @@ export class FilterGroupComponent implements OnInit {
 
   public selectFilter(filter:Filter){
     this.selected = filter;
-    this.onAlertSelected.emit(filter);
+    this.onFileterSelected.emit(filter);
   }
 }

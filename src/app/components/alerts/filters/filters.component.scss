@@ -1,0 +1,10 @@
+.filters-wrapper{
+    height: calc(100vh - 100px);
+    overflow-y: auto;
+    overflow-x:hidden;
+    .filters-title{
+        font-size: 20px;
+        height:50px;
+        line-height: 50px;
+    }
+}

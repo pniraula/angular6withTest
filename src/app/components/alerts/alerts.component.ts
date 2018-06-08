@@ -14,6 +14,7 @@ export class AlertsComponent implements OnInit {
   public alerts:Alert[];
   public selected:Alert;
   public filterGroups:FilterGroup[];
+  private originalAlerts:Alert[];
   constructor(private alertsService:AlertsService) { }
 
   ngOnInit() {
@@ -27,7 +28,16 @@ export class AlertsComponent implements OnInit {
   public onAlertSelected(alert:Alert){
     this.selected = alert;
   }
-
+  public onSelectedFilter(filter:Filter){
+    if(!filter){
+      this.alerts = Object.assign([], this.originalAlerts);
+      return;
+    }
+    if(!this.originalAlerts){
+      this.originalAlerts = Object.assign([], this.alerts);
+    }
+    this.alerts = this.originalAlerts.filter(alert=>alert[filter.Type] === filter.Value);
+  }
   private generateFilterGroups(alerts:Alert[]){
     let severity = {
       "Type": "Severity",
@@ -56,7 +66,7 @@ export class AlertsComponent implements OnInit {
       }
       if(protocolFilters.indexOf(alert.Protocol)===-1){
         protocolFilters.push(alert.Protocol);
-        protocol.Filters.push({Type:"Protocal", Value:alert.Protocol, Count:1});
+        protocol.Filters.push({Type:"Protocol", Value:alert.Protocol, Count:1});
       }else{
         protocol.Filters.find(f=>f.Value===alert.Protocol).Count++;
       }
@@ -67,7 +77,6 @@ export class AlertsComponent implements OnInit {
         clientIp.Filters.find(f=>f.Value===alert.ClientIP).Count++;
       }
     });    
-    console.log(protocol)
     return [severity, protocol, clientIp];
   }
 

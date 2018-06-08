@@ -1,5 +1,9 @@
 <div class="filters-wrapper">
-  <div *ngFor="let filterGroup of filterGroups">
-    <filter-group [filters]="filterGroup.Filters" [title]="filterGroup.Title" ></filter-group> 
+  <div class="filters-title">
+    Filters
   </div>
+  <div *ngFor="let filterGroup of filterGroups">
+    <filter-group [filters]="filterGroup.Filters" [title]="filterGroup.Title" (onFileterSelected)="applyFilter($event)"></filter-group> 
+  </div>
+  <button class="btn btn-block btn-dark" [disabled]="!selectedFilter" (click)="clearFilter()">Clear Filter</button>
 </div>
