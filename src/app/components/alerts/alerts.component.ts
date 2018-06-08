@@ -18,8 +18,8 @@ export class AlertsComponent implements OnInit {
   constructor(private alertsService:AlertsService) { }
 
   ngOnInit() {
-    this.alertsService.getAlerts().toPromise().then((resp)=>{
-      this.alerts = resp.json();
+    this.alertsService.getAlerts().toPromise().then((data)=>{
+      this.alerts = data;
       this.filterGroups = this.generateFilterGroups(this.alerts);
     }, err=>{
     });

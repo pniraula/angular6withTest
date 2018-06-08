@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AlertListComponent } from './alert-list.component';
+import { FormsModule } from '@angular/forms';
+import { FilterPipe } from '../../../pipes/filter.pipe';
 
 describe('AlertListComponent', () => {
   let component: AlertListComponent;
@@ -8,7 +10,8 @@ describe('AlertListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AlertListComponent ]
+      declarations: [ AlertListComponent, FilterPipe ],
+      imports:[FormsModule]
     })
     .compileComponents();
   }));
