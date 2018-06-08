@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Alert } from '../../../models/alert';
 
 @Component({
   selector: 'filters',
@@ -6,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./filters.component.css']
 })
 export class FiltersComponent implements OnInit {
-
-  constructor() { }
-
+  @Input() filterGroups:any[]; 
+  constructor() { 
+  
+  }
   ngOnInit() {
   }
 

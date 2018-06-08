@@ -1,7 +1,7 @@
 <div class="alerts-wrapper container-fluid">
   <div class="row">
     <div class="col-2">
-      <filters></filters>
+      <filters [filterGroups]="filterGroups"></filters>
     </div>
     <div class="col-6">
       <alert-list [alerts]="alerts" (onAlertSelected)="onAlertSelected($event)"></alert-list>

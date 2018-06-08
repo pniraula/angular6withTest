@@ -4,7 +4,7 @@ export class Alert{
     public Severity:string;
     public ClientIP:string;
     public ServerIP:string;
-    public Protocal:string;
+    public Protocol:string;
     public ClientCountry:string;
     constructor(props:any){
         Object.keys(props).forEach(key=>{

@@ -1,3 +1,5 @@
-<p>
-  filters works!
-</p>
+<div class="filters-wrapper">
+  <div *ngFor="let filterGroup of filterGroups">
+    <filter-group [filters]="filterGroup.Filters" [title]="filterGroup.Title" ></filter-group> 
+  </div>
+</div>

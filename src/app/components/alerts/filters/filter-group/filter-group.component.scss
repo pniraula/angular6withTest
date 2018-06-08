@@ -1,0 +1,21 @@
+.filter-section{
+    margin-bottom:20px;
+    .filter-section-title{
+        font-size: 16px;
+        border-bottom: 1px solid #222;
+    }
+    .filter-section-content{
+        font-size: 14px;
+        .filter-item{
+            .btn{
+                padding-left:20px;
+                text-align: left;
+            }
+            .counter{
+                text-align: right;
+                line-height: 40px;
+            }
+        }
+        
+    }
+}
