@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
 import { AlertsService } from '../../services/alerts.service';
 
 import { AlertsComponent } from './alerts.component';
@@ -9,16 +9,21 @@ import { AlertDetailsComponent } from './alert-details/alert-details.component';
 import { FiltersComponent } from './filters/filters.component';
 import { FilterGroupComponent } from './filters/filter-group/filter-group.component';
 
+
+import { FilterPipe} from '../../pipes/filter.pipe';
+
 @NgModule({
   declarations: [
     AlertsComponent,
     AlertListComponent,
     AlertDetailsComponent,
     FiltersComponent,
-    FilterGroupComponent
+    FilterGroupComponent,
+    FilterPipe
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers:[AlertsService],
   exports:[

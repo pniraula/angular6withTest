@@ -10,6 +10,7 @@ import { Alert } from '../../../models/alert';
 export class AlertListComponent implements OnInit {
   @Input() alerts:Alert[];
   @Output() onAlertSelected:EventEmitter<Alert> = new EventEmitter<Alert>();
+  public searchText:string;
   public selected:Alert;
   constructor() { 
 
