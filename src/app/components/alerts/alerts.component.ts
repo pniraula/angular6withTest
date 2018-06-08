@@ -28,6 +28,7 @@ export class AlertsComponent implements OnInit {
   public onAlertSelected(alert:Alert){
     this.selected = alert;
   }
+
   public onSelectedFilter(filter:Filter){
     if(!filter){
       this.alerts = Object.assign([], this.originalAlerts);
@@ -38,46 +39,34 @@ export class AlertsComponent implements OnInit {
     }
     this.alerts = this.originalAlerts.filter(alert=>alert[filter.Type] === filter.Value);
   }
+
+  //load filters dynamically
   private generateFilterGroups(alerts:Alert[]){
-    let severity = {
+    let filterGroups = [{
       "Type": "Severity",
       "Title": "Severity",
       "Filters": []
-    };
-    let protocol = {
+    },{
       "Type":"Protocol",
       "Title":"Protocol",
       "Filters":[]
-    };
-    let clientIp = {
+    }, {
       "Type":"ClientIP",
       "Title":"Clinet IP",
       "Filters":[]
-    };
-    let severityFilters = [];
-    let protocolFilters = [];
-    let clientIpFilters = [];
-    alerts.forEach(alert=>{   
-      if(severityFilters.indexOf(alert.Severity)===-1){
-        severityFilters.push(alert.Severity);
-        severity.Filters.push({Type:"Severity", Value:alert.Severity, Count:1});
-      }else{
-        severity.Filters.find(f=>f.Value===alert.Severity).Count++;
-      }
-      if(protocolFilters.indexOf(alert.Protocol)===-1){
-        protocolFilters.push(alert.Protocol);
-        protocol.Filters.push({Type:"Protocol", Value:alert.Protocol, Count:1});
-      }else{
-        protocol.Filters.find(f=>f.Value===alert.Protocol).Count++;
-      }
-      if(clientIpFilters.indexOf(alert.ClientIP)===-1){
-        clientIpFilters.push(alert.ClientIP);
-        clientIp.Filters.push({Type:"ClientIP", Value:alert.ClientIP, Count:1});
-      }else{
-        clientIp.Filters.find(f=>f.Value===alert.ClientIP).Count++;
-      }
-    });    
-    return [severity, protocol, clientIp];
+    }];
+    return alerts.reduce((accumulator, alert)=>{ 
+      accumulator.map(filterGroup=>{
+        let existingFilter = filterGroup.Filters.find(filter=>filter.Type === filterGroup.Type 
+          && filter.Value === alert[filterGroup.Type]);
+        if(!existingFilter){ 
+          return filterGroup.Filters.push({Type:filterGroup.Type, Value:alert[filterGroup.Type], Count:1});
+        }else{
+          return existingFilter.Count++;
+        }        
+      });
+      return accumulator;
+    }, filterGroups); 
   }
 
 }
