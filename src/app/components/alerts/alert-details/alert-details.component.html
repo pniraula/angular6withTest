@@ -1,3 +1,15 @@
-<p>
-  alert-details works!
-</p>
+<div class="alert-wrapper">
+  <div class="alert-title">
+    Alert Detials #{{alert?.AlertId}}
+  </div>
+  <div class="alert-detail">
+    <div class="row">
+      <div class="col">Alert Id</div>
+      <div class="col">{{alert?.AlertId}}</div>
+    </div>
+    <div class="row">
+      <div class="col">Alert Time</div>
+      <div class="col">{{alert?.AlertTime}}</div>
+    </div>
+  </div>
+</div>
