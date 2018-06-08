@@ -1,6 +1,7 @@
 # FidelisElevatePlatform
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+Built with Angular CLI version 6.0.8. All components are inside app/src/alerts. I have had few unit test case scenarios for alerts component in alerts.component.spec.ts
+
 
 ## Development server
 
@@ -14,4 +15,6 @@ Run `npm run build` to build the project. The build artifacts will be stored in 
 ## Running unit tests
 
 Run `npm run test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+
 
