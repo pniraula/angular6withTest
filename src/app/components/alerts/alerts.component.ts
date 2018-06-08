@@ -10,6 +10,7 @@ import { Alert } from '../../models/alert';
 })
 export class AlertsComponent implements OnInit {
   public alerts:Alert[];
+  public selected:Alert;
   constructor(private alertsService:AlertsService) { }
 
   ngOnInit() {
@@ -18,6 +19,10 @@ export class AlertsComponent implements OnInit {
     }, err=>{
       console.log(err); //error handling
     });
+  }
+
+  public onAlertSelected(alert:Alert){
+    this.selected = alert;
   }
 
 }

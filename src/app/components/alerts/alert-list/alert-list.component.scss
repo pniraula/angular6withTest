@@ -15,6 +15,16 @@
   .alerts-content{
       height: calc(100vh - 100px);
       overflow: auto;
+      .alert-item{
+          cursor: pointer;
+          &:hover{
+              background:rgba(0,0,0,0.3);
+          }
+          &.active{
+              color:#fff;
+              background: #0000ff;
+          }
+      }
   }
 }
 

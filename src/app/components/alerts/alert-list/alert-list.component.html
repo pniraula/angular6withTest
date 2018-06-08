@@ -19,7 +19,7 @@
         <th scope="col">ClientCountry</th>
       </thead>
       <tbody>
-        <tr *ngFor="let alert of alerts">
+        <tr *ngFor="let alert of alerts" (click)="selectAlert(alert)" class="alert-item" [ngClass]="{'active':selected?.AlertId === alert.AlertId}">
           <td>{{alert.AlertId}}</td>
           <td>{{alert.AlertTime}}</td>
           <td>{{alert.Severity}}</td>

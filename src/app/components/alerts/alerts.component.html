@@ -4,10 +4,10 @@
       <filters></filters>
     </div>
     <div class="col-6">
-      <alert-list [alerts]="alerts"></alert-list>
+      <alert-list [alerts]="alerts" (onAlertSelected)="onAlertSelected($event)"></alert-list>
     </div>
     <div class="col-4">
-      <alert-details></alert-details>
+      <alert-details [alert]="selected"></alert-details>
     </div>
   </div>
 </div>
