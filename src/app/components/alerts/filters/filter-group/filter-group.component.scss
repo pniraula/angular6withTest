@@ -8,6 +8,10 @@
     .filter-section-content{
         font-size: 14px;
         .filter-item{
+            padding:0px 15px 0px 15px;
+            &.active{
+                background:rgba(0,0,0,0.2);
+            }
             .btn{
                 padding-left:20px;
                 text-align: left;
