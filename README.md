@@ -2,8 +2,10 @@
 
 Built with Angular CLI version 6.0.8. All components are inside app/src/alerts. I have had few unit test case scenarios for alerts component in alerts.component.spec.ts
 
+## Install Dependencies
+Run `npm install` to install all dependencies. You might need to install Angular CLI if app doesn't start.  
 
-## Development server
+## Start Development server
 
 Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
