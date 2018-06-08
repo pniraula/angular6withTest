@@ -1,15 +1,40 @@
 <div class="alert-wrapper">
-  <div class="alert-title">
-    Alert Detials #{{alert?.AlertId}}
+  <div *ngIf="alert">
+    <div class="alert-title">
+      Alert Detials #{{alert.AlertId}}
+    </div>
+    <div class="alert-detail">
+      <div class="row">
+        <div class="col">Alert Id</div>
+        <div class="col">{{alert.AlertId}}</div>
+      </div>
+      <div class="row">
+        <div class="col">Alert Time</div>
+        <div class="col">{{alert.AlertTime}}</div>
+      </div>
+      <div class="row">
+        <div class="col">Severity</div>
+        <div class="col">{{alert.Severity}}</div>
+      </div>
+      <div class="row">
+        <div class="col">Protocol</div>
+        <div class="col">{{alert.Protocol}}</div>
+      </div>
+      <div class="row">
+        <div class="col">Client IP</div>
+        <div class="col">{{alert.ClientIP}}</div>
+      </div>
+      <div class="row">
+        <div class="col">Server IP</div>
+        <div class="col">{{alert.ServerIP}}</div>
+      </div>
+      <div class="row">
+        <div class="col">Client Country</div>
+        <div class="col">{{alert.ClientCountry}}</div>
+      </div>
+    </div>
   </div>
-  <div class="alert-detail">
-    <div class="row">
-      <div class="col">Alert Id</div>
-      <div class="col">{{alert?.AlertId}}</div>
-    </div>
-    <div class="row">
-      <div class="col">Alert Time</div>
-      <div class="col">{{alert?.AlertTime}}</div>
-    </div>
+  <div *ngIf="!alert">
+    <p>Please select an alert to see details.</p>
   </div>
 </div>
